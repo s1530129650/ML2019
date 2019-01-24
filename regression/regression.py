@@ -7,7 +7,7 @@
 @contact: 123@qq.com
 @site: 
 @software: PyCharm
-@file: regression.py
+@file: regression.pyQ
 @time: 2019/1/8 16:47
 """
 import numpy as np
@@ -33,7 +33,7 @@ for i in range(len(x)):
 #ydata = b +w*xdata
 b = -120#initial b
 w = -4
-lr = 0.000000,1 #learning rate
+lr = 0.0000001 #learning rate
 iteration = 10000000
 
 #store initial values for plotting
@@ -50,19 +50,20 @@ for i in range(iteration):
         w_grad = w_grad - 2.0*(y_data[n] - b - w*x_data[n]) *x_data[n]
 
     #Update parameters
-    b = b - lr*b_grad
-    w = w - lr*w_grad
+    b = b - lr * b_grad
+    w = w - lr * w_grad
 
     #Store parameters for plotting
     b_history.append(b)
     w_history.append(w)
 
 #plot the figure
-plt.contourf(x,y,Z,50,alpha = 0.5, cmap = plt.get_cmap('jet'))
-plt.plot([-188.4],[2.67],'x',ms=12,markeredgewidth =3, color = 'orange')
+plt.contourf(x,y,Z,50,alpha = 0.5, cmap = plt.get_cmap('jet')) #plt.contourf 等高线的绘制
+plt.plot([-188.4],[2.67],'x',ms=12,markeredgewidth =3, color = 'orange')#markersize
 plt.plot(b_history,w_history,'o-',ms =3,lw=1.5,color = 'black')
 plt.xlim(-200,-100)
 plt.ylim(-5,5)
 plt.xlabel(r'$b$',fontsize =16)
 plt.ylabel(r'$w$',fontsize =16)
 plt.show()
+

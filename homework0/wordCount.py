@@ -16,7 +16,7 @@ with open('hw0_data\words.txt', 'r') as f:
     wordList = f.read().split()
 print(wordList)
 wordCount = Counter(wordList)
-wordDict =  dict(wordCount)
+wordDict = dict(wordCount)
 length = len(wordDict)
 i = 0
 #js = json.dumps(wordDict)
